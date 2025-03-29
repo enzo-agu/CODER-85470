@@ -1,0 +1,11 @@
+[
+  {
+    "id": 2,
+    "title": "Silla erg.",
+    "description": "Silla con cabezal",
+    "price": 150,
+    "thumbnail": "silla.jpg",
+    "code": "MS125",
+    "stock": 90
+  }
+]
