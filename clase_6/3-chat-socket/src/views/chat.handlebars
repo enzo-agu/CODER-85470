@@ -1,0 +1,28 @@
+<body>
+  <h2>Chat comunitario - Bienvenido {{username}}</h2>
+
+  <ul id="messages"></ul>
+
+  <form id="messageForm">
+    <input id="messageInput" autocomplete="off" placeholder="Escribe un mensaje..." />
+    <button>Enviar</button>
+  </form>
+
+  <script>
+    const username = "{{username}}";
+  </script>
+
+  
+  <script>
+  // Alerta de bienvenida con SweetAlert
+  Swal.fire({
+    title: `¡Hola, ${username}!`,
+    text: 'Bienvenido al chat 🎉',
+    icon: 'success',
+    confirmButtonText: '¡Vamos!'
+  });
+</script>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/chat.js"></script>
+</body>

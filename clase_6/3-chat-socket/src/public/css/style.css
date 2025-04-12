@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  li {
+    padding: 6px;
+    background: #f1f1f1;
+    margin: 4px 0;
+  }
+  
+  input {
+    padding: 10px;
+    width: 70%;
+  }
+  
+  button {
+    padding: 10px;
+  }
+  

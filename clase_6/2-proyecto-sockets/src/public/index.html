@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Mini chat</h1>
+    <ul id="messages"></ul>
+
+    <form id="form">
+        <input id="input" placeholder="Escribir un mensaje">
+        <button>Enviar</button>
+    </form>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+
+
+        const socket = io();
+        const form = document.getElementById('form');
+        const input =document.getElementById('input') 
+        const messages =document.getElementById('messages')
+
+
+        form.addEventListener('submit', (e)=>{
+            e.preventDefault();
+
+            if(input.value){
+                socket.emit('chat mensaje', input.value);
+                input.value = ''
+                console.log('Viaja al server 👉:',socket.id);
+            }
+
+        })
+
+        socket.on('chat mensaje', (msg)=>{
+
+            const li = document.createElement('li');
+            li.textContent = msg ;
+            messages.appendChild(li);
+            console.log('Viene del sever 👉:',socket.id);
+
+
+        })
+
+    </script>
+
+
+    
+</body>
+</html>
